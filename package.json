@@ -1,0 +1,27 @@
+{
+  "name": "mqtt-mailer",
+  "version": "0.0.1",
+  "description": "Mailer service for detox",
+  "author": "DSTIL",
+  "license": "MIT",
+  "main": "src/index.js",
+  "repository": {},
+  "bugs": {},
+  "dependencies": {
+    "mqtt": "1.8.0",
+    "winston": "2.2.0",
+    "config.json": "0.0.4",
+    "nodemailer": "2.3.2",
+    "nodemailer-smtp-transport": "2.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0"
+  },
+  "scripts": {
+    "start": "node --use_strict ./src/app.js",
+    "lint": "eslint src"
+  }
+}
