@@ -13,7 +13,6 @@ if (process.env.MAILER_ADDRESS) {
   });
 
   client.on('message', (topic, message) => {
-    winston.info(`Topic received: ${topic.toString()}`);
     winston.info(`Message received: ${message.toString()}`);
     new MailSender(message.toString())
     .then((emailAddress) => {
