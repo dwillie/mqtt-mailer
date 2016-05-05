@@ -40,6 +40,7 @@ function launchService() {
         fullfil();
       }
       if (data.indexOf('was sent') > -1) {
+        winston.info('Test succeeded');
         process.exit();
       }
     });
@@ -76,4 +77,8 @@ function publishToMailer(email) {
     message:  '<H1>This is email body</H1>This email is only for testing'
   });
   client.publish(topic, message, mqttConfig);
+  setTimeout(() => {
+    winston.error(new Error('Test failed. Waiting for message timeout'));
+    process.exit();
+  }, 10000);
 }
