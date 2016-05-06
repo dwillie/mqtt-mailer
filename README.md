@@ -1,6 +1,6 @@
 # mqtt-mailer
 
-Node app that listens to MQTT queue on specific topic (can be found in `./src/config/config.json`) and processes message to send an email
+Node app that listens to MQTT queue on specific topic (can be found in `./src/config/config.json`) and processes the message to send an email
 
 ### Setup Basics
 - `git clone https://github.com/dstil/mqtt-mailer.git`
@@ -26,7 +26,7 @@ Expected mqtt message format
 Email body can be in html format
 
 ### Usage
-Run test script `npm start` to test if you set it up properly
+Run test script `npm test` to test if you set it up properly
 
 or
 
