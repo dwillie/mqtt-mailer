@@ -24,3 +24,16 @@ Expected mqtt message format
 }
 ```
 Email body can be in html format
+
+### Usage
+Run test script `npm start` to test if you set it up properly
+
+or
+
+You can manually publish a message to specified topic with `mosquitto_pub`
+
+For example
+
+`mosquitto_pub -h localhost -t 'mail/#' -m '{"receiver": "example@email.com", "subject": "This is a test email", "message": "<H1>This is email body</H1>This email is only for testing"}'`
+
+**Replace `example@email.com` and `MAILER_PWD` to your desired configuration**
