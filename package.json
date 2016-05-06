@@ -24,6 +24,7 @@
   },
   "scripts": {
     "start": "node --use_strict ./src/app.js",
+    "test": "node test/test.js",
     "lint": "eslint src"
   }
 }
