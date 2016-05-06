@@ -1,11 +1,12 @@
-const prompt      = require('prompt');
-const winston     = require('winston');
-const spawn       = require('child_process').spawn;
-const mqtt        = require('mqtt');
-const client      = mqtt.connect('mqtt://localhost');
-const mqttConfig  = { qos: 1 };
-const config      = require('config.json')('./src/config/config.json');
-const validator   = require('validator');
+const mqtt      = require('mqtt');
+const prompt    = require('prompt');
+const winston   = require('winston');
+const validator = require('validator');
+const spawn     = require('child_process').spawn;
+const client    = mqtt.connect('mqtt://localhost');
+const config    = require('config.json')('./src/config/config.json');
+
+const mqttConfig = { qos: 1 };
 
 checkEnvVar()
 .then(() => {
