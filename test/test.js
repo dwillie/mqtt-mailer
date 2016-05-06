@@ -41,7 +41,7 @@ function launchService() {
         fullfil();
       }
       if (data.indexOf('was sent') > -1) {
-        winston.info('Test succeeded');
+        winston.info('Test succeed');
         process.exit();
       }
     });
