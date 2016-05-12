@@ -34,6 +34,4 @@ You can manually publish a message to specified topic with `mosquitto_pub`
 
 For example
 
-`mosquitto_pub -h localhost -t 'mail/#' -m '{"receiver": "example@email.com", "subject": "This is a test email", "message": "<H1>This is email body</H1>This email is only for testing"}'`
-
-**Replace `example@email.com` and `MAILER_PWD` to your desired configuration**
+`mosquitto_pub -h localhost -t 'mail/test' -m '{"receiver": "example@email.com", "subject": "This is a test email", "message": "<H1>This is email body</H1>This email is only for testing"}'`
