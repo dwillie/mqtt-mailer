@@ -1,7 +1,7 @@
 const mqtt       = require('mqtt');
 const winston    = require('winston');
-const MailSender = require(`${__dirname}/module/mail-sender.js`);
-const config     = require('config.json')(`${__dirname}/config/config.json`);
+const MailSender = require('./module/mail-sender.js');
+const config     = require('config.json')('./config/config.json');
 
 const client = mqtt.connect('mqtt://localhost');
 
