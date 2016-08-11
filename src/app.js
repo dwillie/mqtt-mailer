@@ -1,8 +1,8 @@
 const mqtt       = require('mqtt');
 const winston    = require('winston');
-const MailSender = require('./module/mail-sender.js');
+const MailSender = require('./module/mail_sender.js');
 const consts     = require('./support/constants');
-const config  = require('./support/app_config').getConfig();
+const config     = require('./support/app_config').getConfig();
 
 const client = mqtt.connect(consts.mqttHost);
 
