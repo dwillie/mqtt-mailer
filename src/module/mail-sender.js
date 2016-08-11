@@ -1,6 +1,7 @@
 const validator     = require('validator');
 const nodemailer    = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
+const consts        = require('../support/constants.js');
 
 function MailSender(jsonString) {
   const mailInfo = JSON.parse(jsonString);
@@ -9,8 +10,8 @@ function MailSender(jsonString) {
       const mailer = nodemailer.createTransport(smtpTransport({
         service: 'Gmail',
         auth:    {
-          user: process.env.MAILER_ADDRESS,
-          pass: process.env.MAILER_PWD
+          user: consts.mailerAddress,
+          pass: consts.mailerPwd
         }
       }));
       const options = {
