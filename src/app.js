@@ -1,12 +1,13 @@
 const mqtt       = require('mqtt');
 const winston    = require('winston');
-const MailSender = require(`${__dirname}/module/mail-sender.js`);
-const config     = require('config.json')(`${__dirname}/config/config.json`);
+const MailSender = require('./module/mail_sender.js');
+const consts     = require('./support/constants');
+const config     = require('./support/app_config').getConfig();
 
-const client = mqtt.connect('mqtt://localhost');
+const client = mqtt.connect(consts.mqttHost);
 
-if (process.env.MAILER_ADDRESS) {
-  winston.info(`Server email: ${process.env.MAILER_ADDRESS}`);
+if (consts.mailerAddress) {
+  winston.info(`Server email: ${consts.mailerAddress}`);
   client.on('connect', () => {
     client.subscribe(config.topic.sub);
     winston.info(`Mail sender subscribed topic: ${config.topic.sub}`);
