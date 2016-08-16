@@ -1,6 +1,6 @@
 const mqtt       = require('mqtt');
 const winston    = require('winston');
-const MailSender = require('./module/mail_sender.js');
+const detoxMail  = require('./module/detox_central_mail');
 const consts     = require('./support/constants');
 const config     = require('./support/app_config').getConfig();
 
@@ -15,9 +15,9 @@ if (consts.mailerAddress) {
 
   client.on('message', (topic, message) => {
     winston.info(`Message received: ${message.toString()}`);
-    new MailSender(message.toString())
-    .then((emailAddress) => {
-      winston.info(`Email was sent to: ${emailAddress}`);
+    detoxMail.send(message.toString())
+    .then((result) => {
+      winston.info(`Email send attempted result: ${result}`);
     }, (error) => {
       winston.error(error);
     });

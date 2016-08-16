@@ -17,7 +17,10 @@ in rec {
     name = "mqtt-mailer-0.0.1";
     src = [ tarball ];
     buildInputs = nodePackages.nativeDeps."mqtt-mailer" or [];
-    deps = [ nodePackages.by-spec."mqtt"."1.8.0" nodePackages.by-spec."winston"."2.2.0" nodePackages.by-spec."config.json"."0.0.4" nodePackages.by-spec."validator"."5.2.0" nodePackages.by-spec."nodemailer"."2.3.2" nodePackages.by-spec."nodemailer-smtp-transport"."2.4.2" nodePackages.by-spec."prompt"."1.0.0" ];
+    deps = [ nodePackages.by-spec."mqtt"."1.8.0" nodePackages.by-spec."prompt"."1.0.0" nodePackages.by-spec."request"."^2.74.0" nodePackages.by-spec."urijs"."^1.18.1" nodePackages.by-spec."validator"."5.2.0" nodePackages.by-spec."winston"."2.2.0" ];
     peerDependencies = [];
+  };
+  dev = build.override {
+    buildInputs = build.buildInputs ++ [ nodePackages.by-spec."eslint"."^2.8.0" nodePackages.by-spec."eslint-config-airbnb"."^7.0.0" nodePackages.by-spec."eslint-plugin-jsx-a11y"."^0.6.2" nodePackages.by-spec."eslint-plugin-react"."^4.3.0" ];
   };
 }
