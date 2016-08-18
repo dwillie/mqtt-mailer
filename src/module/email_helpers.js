@@ -1,11 +1,26 @@
 const request   = require('request');
 const uri       = require('urijs');
 const winston   = require('winston');
+const validator = require('validator');
 const consts    = require('../support/constants');
+
+
+function validate(emailRequest) {
+  const emailData = JSON.parse(emailRequest);
+  if (!('receiver' in emailData)) return false;
+  if (!(validator.isEmail(emailData.receiver))) return false;
+  if (!('subject' in emailData)) return false;
+  if (!('message' in emailData)) return false;
+  return true;
+}
 
 function send(message) {
   return new Promise((fulfill, reject) =>  {
     const detoxHostUrl = getMailRequestUrl();
+    if (!validate(message)) {
+      reject('Invalid request');
+    }
+
     winston.info(`Using detox central address: ${detoxHostUrl}`);
     request.post(detoxHostUrl, { json: { message } }, (err, response, body) => {
       if (err) {

@@ -1,6 +1,6 @@
 const mqtt       = require('mqtt');
 const winston    = require('winston');
-const detoxMail  = require('./module/detox_central_mail');
+const detoxMail  = require('./module/email_helpers');
 const consts     = require('./support/constants');
 const config     = require('./support/app_config').getConfig();
 
