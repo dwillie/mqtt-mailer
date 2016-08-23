@@ -3,8 +3,11 @@
 
 let
   pkg = pkgs.callPackage mqtt-mailer {};
+  externalNodeOptions = "--external request";
+  buildTools = pkgs.callPackage ./build_scripts/build.nix { externalNodeOptions=externalNodeOptions;};
 in rec {
-  inherit (pkg) tarball build;
+  inherit (pkg) tarball;
+  build = buildTools.detoxNodePackage pkg;
 
   # Will be run in a container with all Detox services running
   integrationTest = ''

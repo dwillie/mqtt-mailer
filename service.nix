@@ -1,6 +1,8 @@
 {mkService, callPackage, nodejs, mqtt-mailer ? callPackage ./release.nix {}, mosquitto}:
 
-mkService rec {
+let
+  executionPath = ''${mqtt-mailer.build}/lib/node_modules/mqtt-mailer'';
+in mkService rec {
   name = "mqtt-mailer";
   user.name = "mqtt-mailer";
   user.home = "/var/lib/${user.name}";
@@ -11,5 +13,8 @@ mkService rec {
     MAILER_PWD = "YOUR_PASSWORD";
     CONFIG_FILE_PATH = "${user.home}/config.json";
   };
-  script = "exec ${nodejs}/bin/node --use_strict ${mqtt-mailer.build}/lib/node_modules/mqtt-mailer/src/app.js";
+  script = ''
+    cd ${executionPath}
+    exec ${nodejs}/bin/node --use_strict ${executionPath}/dist/app.js
+  '';
 }
