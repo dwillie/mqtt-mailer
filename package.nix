@@ -253,25 +253,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."async"."~0.9.0" =
-    self.by-version."async"."0.9.2";
-  by-version."async"."0.9.2" = self.buildNodePackage {
-    name = "async-0.9.2";
-    version = "0.9.2";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/async/-/async-0.9.2.tgz";
-      name = "async-0.9.2.tgz";
-      sha1 = "aea74d5e61c1f899613bf64bda66d4c78f2fd17d";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
   by-spec."async"."~1.0.0" =
     self.by-version."async"."1.0.0";
   by-version."async"."1.0.0" = self.buildNodePackage {
@@ -650,25 +631,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."colors"."^1.1.2" =
-    self.by-version."colors"."1.1.2";
-  by-version."colors"."1.1.2" = self.buildNodePackage {
-    name = "colors-1.1.2";
-    version = "1.1.2";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/colors/-/colors-1.1.2.tgz";
-      name = "colors-1.1.2.tgz";
-      sha1 = "168a4701756b6a7f51a12ce0c97bfa28c084ed63";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
   by-spec."combined-stream"."^1.0.5" =
     self.by-version."combined-stream"."1.0.5";
   by-version."combined-stream"."1.0.5" = self.buildNodePackage {
@@ -895,25 +857,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."deep-equal"."~0.2.1" =
-    self.by-version."deep-equal"."0.2.2";
-  by-version."deep-equal"."0.2.2" = self.buildNodePackage {
-    name = "deep-equal-0.2.2";
-    version = "0.2.2";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/deep-equal/-/deep-equal-0.2.2.tgz";
-      name = "deep-equal-0.2.2.tgz";
-      sha1 = "84b745896f34c684e98f2ce0e42abaf43bba017d";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
   by-spec."deep-is"."~0.1.3" =
     self.by-version."deep-is"."0.1.3";
   by-version."deep-is"."0.1.3" = self.buildNodePackage {
@@ -979,18 +922,18 @@
     cpu = [ ];
   };
   by-spec."doctrine"."^1.2.2" =
-    self.by-version."doctrine"."1.2.2";
-  by-version."doctrine"."1.2.2" = self.buildNodePackage {
-    name = "doctrine-1.2.2";
-    version = "1.2.2";
+    self.by-version."doctrine"."1.2.3";
+  by-version."doctrine"."1.2.3" = self.buildNodePackage {
+    name = "doctrine-1.2.3";
+    version = "1.2.3";
     bin = false;
     src = fetchurl {
-      url = "https://registry.npmjs.org/doctrine/-/doctrine-1.2.2.tgz";
-      name = "doctrine-1.2.2.tgz";
-      sha1 = "9e9867210149548b95ec51469dae4caad312308e";
+      url = "https://registry.npmjs.org/doctrine/-/doctrine-1.2.3.tgz";
+      name = "doctrine-1.2.3.tgz";
+      sha1 = "6aec6bbd62cf89dd498cae70c0ed9f49da873a6a";
     };
     deps = {
-      "esutils-1.1.6" = self.by-version."esutils"."1.1.6";
+      "esutils-2.0.2" = self.by-version."esutils"."2.0.2";
       "isarray-1.0.0" = self.by-version."isarray"."1.0.0";
     };
     optionalDependencies = {
@@ -1013,7 +956,7 @@
     deps = {
       "end-of-stream-1.0.0" = self.by-version."end-of-stream"."1.0.0";
       "inherits-2.0.1" = self.by-version."inherits"."2.0.1";
-      "readable-stream-2.1.4" = self.by-version."readable-stream"."2.1.4";
+      "readable-stream-2.1.5" = self.by-version."readable-stream"."2.1.5";
       "stream-shift-1.0.0" = self.by-version."stream-shift"."1.0.0";
     };
     optionalDependencies = {
@@ -1289,7 +1232,7 @@
       "chalk-1.1.3" = self.by-version."chalk"."1.1.3";
       "concat-stream-1.5.1" = self.by-version."concat-stream"."1.5.1";
       "debug-2.2.0" = self.by-version."debug"."2.2.0";
-      "doctrine-1.2.2" = self.by-version."doctrine"."1.2.2";
+      "doctrine-1.2.3" = self.by-version."doctrine"."1.2.3";
       "es6-map-0.1.4" = self.by-version."es6-map"."0.1.4";
       "escope-3.6.0" = self.by-version."escope"."3.6.0";
       "espree-3.1.7" = self.by-version."espree"."3.1.7";
@@ -1484,25 +1427,6 @@
       url = "https://registry.npmjs.org/estraverse/-/estraverse-4.1.1.tgz";
       name = "estraverse-4.1.1.tgz";
       sha1 = "f6caca728933a850ef90661d0e17982ba47111a2";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."esutils"."^1.1.6" =
-    self.by-version."esutils"."1.1.6";
-  by-version."esutils"."1.1.6" = self.buildNodePackage {
-    name = "esutils-1.1.6";
-    version = "1.1.6";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/esutils/-/esutils-1.1.6.tgz";
-      name = "esutils-1.1.6.tgz";
-      sha1 = "c01ccaa9ae4b897c6d0c3e210ae52f3c7a844375";
     };
     deps = {
     };
@@ -2063,25 +1987,6 @@
       "assert-plus-0.2.0" = self.by-version."assert-plus"."0.2.0";
       "jsprim-1.3.0" = self.by-version."jsprim"."1.3.0";
       "sshpk-1.9.2" = self.by-version."sshpk"."1.9.2";
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."i"."0.3.x" =
-    self.by-version."i"."0.3.5";
-  by-version."i"."0.3.5" = self.buildNodePackage {
-    name = "i-0.3.5";
-    version = "0.3.5";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/i/-/i-0.3.5.tgz";
-      name = "i-0.3.5.tgz";
-      sha1 = "1d2b854158ec8169113c6cb7f6b6801e99e211d5";
-    };
-    deps = {
     };
     optionalDependencies = {
     };
@@ -2766,7 +2671,7 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."mkdirp"."0.x.x" =
+  by-spec."mkdirp"."^0.5.0" =
     self.by-version."mkdirp"."0.5.1";
   by-version."mkdirp"."0.5.1" = self.buildNodePackage {
     name = "mkdirp-0.5.1";
@@ -2786,8 +2691,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."mkdirp"."^0.5.0" =
-    self.by-version."mkdirp"."0.5.1";
   by-spec."mkdirp"."^0.5.1" =
     self.by-version."mkdirp"."0.5.1";
   by-spec."mqtt"."1.8.0" =
@@ -2897,44 +2800,6 @@
       url = "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.5.tgz";
       name = "mute-stream-0.0.5.tgz";
       sha1 = "8fbfabb0a98a253d3184331f9e8deb7372fac6c0";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."mute-stream"."~0.0.4" =
-    self.by-version."mute-stream"."0.0.6";
-  by-version."mute-stream"."0.0.6" = self.buildNodePackage {
-    name = "mute-stream-0.0.6";
-    version = "0.0.6";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.6.tgz";
-      name = "mute-stream-0.0.6.tgz";
-      sha1 = "48962b19e169fd1dfc240b3f1e7317627bbc47db";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."ncp"."1.0.x" =
-    self.by-version."ncp"."1.0.1";
-  by-version."ncp"."1.0.1" = self.buildNodePackage {
-    name = "ncp-1.0.1";
-    version = "1.0.1";
-    bin = true;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/ncp/-/ncp-1.0.1.tgz";
-      name = "ncp-1.0.1.tgz";
-      sha1 = "d15367e5cb87432ba117d2bf80fdf45aecfb4246";
     };
     deps = {
     };
@@ -3243,25 +3108,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."pkginfo"."0.x.x" =
-    self.by-version."pkginfo"."0.4.0";
-  by-version."pkginfo"."0.4.0" = self.buildNodePackage {
-    name = "pkginfo-0.4.0";
-    version = "0.4.0";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/pkginfo/-/pkginfo-0.4.0.tgz";
-      name = "pkginfo-0.4.0.tgz";
-      sha1 = "349dbb7ffd38081fcadc0853df687f0c7744cd65";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
   by-spec."pluralize"."^1.2.1" =
     self.by-version."pluralize"."1.2.1";
   by-version."pluralize"."1.2.1" = self.buildNodePackage {
@@ -3338,32 +3184,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."prompt"."1.0.0" =
-    self.by-version."prompt"."1.0.0";
-  by-version."prompt"."1.0.0" = self.buildNodePackage {
-    name = "prompt-1.0.0";
-    version = "1.0.0";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/prompt/-/prompt-1.0.0.tgz";
-      name = "prompt-1.0.0.tgz";
-      sha1 = "8e57123c396ab988897fb327fd3aedc3e735e4fe";
-    };
-    deps = {
-      "colors-1.1.2" = self.by-version."colors"."1.1.2";
-      "pkginfo-0.4.0" = self.by-version."pkginfo"."0.4.0";
-      "read-1.0.7" = self.by-version."read"."1.0.7";
-      "revalidator-0.1.8" = self.by-version."revalidator"."0.1.8";
-      "utile-0.3.0" = self.by-version."utile"."0.3.0";
-      "winston-2.1.1" = self.by-version."winston"."2.1.1";
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  "prompt" = self.by-version."prompt"."1.0.0";
   by-spec."pump"."^1.0.0" =
     self.by-version."pump"."1.0.1";
   by-version."pump"."1.0.1" = self.buildNodePackage {
@@ -3397,26 +3217,6 @@
       sha1 = "ce03c5ff0935bc1d9d69a9f14cbd18e568d67625";
     };
     deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."read"."1.0.x" =
-    self.by-version."read"."1.0.7";
-  by-version."read"."1.0.7" = self.buildNodePackage {
-    name = "read-1.0.7";
-    version = "1.0.7";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/read/-/read-1.0.7.tgz";
-      name = "read-1.0.7.tgz";
-      sha1 = "b3da19bd052431a97671d44a42634adf710b40c4";
-    };
-    deps = {
-      "mute-stream-0.0.6" = self.by-version."mute-stream"."0.0.6";
     };
     optionalDependencies = {
     };
@@ -3471,15 +3271,15 @@
     cpu = [ ];
   };
   by-spec."readable-stream"."^2.0.0" =
-    self.by-version."readable-stream"."2.1.4";
-  by-version."readable-stream"."2.1.4" = self.buildNodePackage {
-    name = "readable-stream-2.1.4";
-    version = "2.1.4";
+    self.by-version."readable-stream"."2.1.5";
+  by-version."readable-stream"."2.1.5" = self.buildNodePackage {
+    name = "readable-stream-2.1.5";
+    version = "2.1.5";
     bin = false;
     src = fetchurl {
-      url = "https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.4.tgz";
-      name = "readable-stream-2.1.4.tgz";
-      sha1 = "70b9791c6fcb8480db44bd155a0f6bb58f172468";
+      url = "https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz";
+      name = "readable-stream-2.1.5.tgz";
+      sha1 = "66fa8b720e1438b364681f2ad1a63c618448c9d0";
     };
     deps = {
       "buffer-shims-1.0.0" = self.by-version."buffer-shims"."1.0.0";
@@ -3693,26 +3493,7 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."revalidator"."0.1.x" =
-    self.by-version."revalidator"."0.1.8";
-  by-version."revalidator"."0.1.8" = self.buildNodePackage {
-    name = "revalidator-0.1.8";
-    version = "0.1.8";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/revalidator/-/revalidator-0.1.8.tgz";
-      name = "revalidator-0.1.8.tgz";
-      sha1 = "fece61bfa0c1b52a206bd6b18198184bdd523a3b";
-    };
-    deps = {
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."rimraf"."2.x.x" =
+  by-spec."rimraf"."^2.2.8" =
     self.by-version."rimraf"."2.5.4";
   by-version."rimraf"."2.5.4" = self.buildNodePackage {
     name = "rimraf-2.5.4";
@@ -3732,8 +3513,6 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."rimraf"."^2.2.8" =
-    self.by-version."rimraf"."2.5.4";
   by-spec."run-async"."^0.1.0" =
     self.by-version."run-async"."0.1.0";
   by-version."run-async"."0.1.0" = self.buildNodePackage {
@@ -4352,41 +4131,16 @@
     os = [ ];
     cpu = [ ];
   };
-  by-spec."utile"."0.3.x" =
-    self.by-version."utile"."0.3.0";
-  by-version."utile"."0.3.0" = self.buildNodePackage {
-    name = "utile-0.3.0";
-    version = "0.3.0";
+  by-spec."validator"."^5.5.0" =
+    self.by-version."validator"."5.5.0";
+  by-version."validator"."5.5.0" = self.buildNodePackage {
+    name = "validator-5.5.0";
+    version = "5.5.0";
     bin = false;
     src = fetchurl {
-      url = "https://registry.npmjs.org/utile/-/utile-0.3.0.tgz";
-      name = "utile-0.3.0.tgz";
-      sha1 = "1352c340eb820e4d8ddba039a4fbfaa32ed4ef3a";
-    };
-    deps = {
-      "async-0.9.2" = self.by-version."async"."0.9.2";
-      "deep-equal-0.2.2" = self.by-version."deep-equal"."0.2.2";
-      "i-0.3.5" = self.by-version."i"."0.3.5";
-      "mkdirp-0.5.1" = self.by-version."mkdirp"."0.5.1";
-      "ncp-1.0.1" = self.by-version."ncp"."1.0.1";
-      "rimraf-2.5.4" = self.by-version."rimraf"."2.5.4";
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."validator"."5.2.0" =
-    self.by-version."validator"."5.2.0";
-  by-version."validator"."5.2.0" = self.buildNodePackage {
-    name = "validator-5.2.0";
-    version = "5.2.0";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/validator/-/validator-5.2.0.tgz";
-      name = "validator-5.2.0.tgz";
-      sha1 = "e66fb3ec352348c1f7232512328738d8d66a9689";
+      url = "https://registry.npmjs.org/validator/-/validator-5.5.0.tgz";
+      name = "validator-5.5.0.tgz";
+      sha1 = "726145e7293b46e3346042471be80fe7dfa775b7";
     };
     deps = {
     };
@@ -4396,7 +4150,7 @@
     os = [ ];
     cpu = [ ];
   };
-  "validator" = self.by-version."validator"."5.2.0";
+  "validator" = self.by-version."validator"."5.5.0";
   by-spec."verror"."1.3.6" =
     self.by-version."verror"."1.3.6";
   by-version."verror"."1.3.6" = self.buildNodePackage {
@@ -4434,32 +4188,6 @@
       "through2-2.0.1" = self.by-version."through2"."2.0.1";
       "ws-1.1.1" = self.by-version."ws"."1.1.1";
       "xtend-4.0.1" = self.by-version."xtend"."4.0.1";
-    };
-    optionalDependencies = {
-    };
-    peerDependencies = [];
-    os = [ ];
-    cpu = [ ];
-  };
-  by-spec."winston"."2.1.x" =
-    self.by-version."winston"."2.1.1";
-  by-version."winston"."2.1.1" = self.buildNodePackage {
-    name = "winston-2.1.1";
-    version = "2.1.1";
-    bin = false;
-    src = fetchurl {
-      url = "https://registry.npmjs.org/winston/-/winston-2.1.1.tgz";
-      name = "winston-2.1.1.tgz";
-      sha1 = "3c9349d196207fd1bdff9d4bc43ef72510e3a12e";
-    };
-    deps = {
-      "async-1.0.0" = self.by-version."async"."1.0.0";
-      "colors-1.0.3" = self.by-version."colors"."1.0.3";
-      "cycle-1.0.3" = self.by-version."cycle"."1.0.3";
-      "eyes-0.1.8" = self.by-version."eyes"."0.1.8";
-      "isstream-0.1.2" = self.by-version."isstream"."0.1.2";
-      "pkginfo-0.3.1" = self.by-version."pkginfo"."0.3.1";
-      "stack-trace-0.0.9" = self.by-version."stack-trace"."0.0.9";
     };
     optionalDependencies = {
     };
