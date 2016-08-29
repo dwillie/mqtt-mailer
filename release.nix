@@ -3,8 +3,7 @@
 
 let
   pkg = pkgs.callPackage mqtt-mailer {};
-  externalNodePackages = ["request"];
-  buildTools = pkgs.callPackage ./build_scripts/build.nix { externalNodePackages=externalNodePackages;};
+  buildTools = pkgs.callPackage ./build_scripts/build.nix { doNotBrowsify = ["request"]; };
 in rec {
   inherit (pkg) tarball;
   build = buildTools.detoxNodePackage pkg;
