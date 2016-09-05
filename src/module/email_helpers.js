@@ -1,8 +1,9 @@
 const request   = require('request');
 const uri       = require('urijs');
-const winston   = require('winston');
 const validator = require('validator');
 const consts    = require('../support/constants');
+const winston   = require('winston');
+const auth      = require('detox-node-service-auth-module');
 
 
 function validate(emailRequest) {
@@ -15,18 +16,24 @@ function validate(emailRequest) {
 }
 
 function send(message) {
-  return new Promise((fulfill, reject) =>  {
-    const detoxHostUrl = getMailRequestUrl();
+  return new Promise((fulfill) =>  {
+    const options = auth.centralOptions;
     if (!validate(message)) {
-      reject('Invalid request');
+      throw Error('Invalid request');
     }
 
-    winston.info(`Using detox central address: ${detoxHostUrl}`);
-    request.post(detoxHostUrl, { json: { message } }, (err, response, body) => {
+    options.json = { message };
+    options.method = 'POST';
+    request(getMailRequestUrl(), options, (err, response, body) => {
       if (err) {
-        reject(err);
-      } else if (response.statusCode === 200 || response.statusCode === 201) {
-        fulfill(JSON.parse(body));
+        throw err;
+      } else if (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202) {
+        winston.info(`Email accepted: ${JSON.stringify(body)}`);
+        fulfill(body);
+      } else if (response.statusCode === 401) {
+        winston.error('You are unauthorised');
+      } else {
+        winston.error(`Something else happened: ${response.statusCode}, body: ${JSON.stringify(body)}`);
       }
     });
   });
