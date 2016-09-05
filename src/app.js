@@ -17,8 +17,8 @@ if (consts.mailerAddress) {
     winston.info(`Message received: ${message.toString()}`);
     detoxMail.send(message.toString())
     .then((result) => {
-      winston.info(`Email send attempted result: ${result}`);
-    }, (error) => {
+      winston.info(`Email send attempted result: ${JSON.stringify(result)}`);
+    }).catch((error) => {
       winston.error(error);
     });
   });
