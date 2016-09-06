@@ -5,8 +5,6 @@ Node app that listens to MQTT queue on specific topic (can be found in `./src/co
 ### Setup Basics
 - `git clone https://github.com/dstil/mqtt-mailer.git`
 - `npm install`
-- `export MAILER_ADDRESS='example@gmail.com'`
-- `export MAILER_PWD='yourpassword'`
 - `npm start`
 
 

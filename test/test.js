@@ -8,27 +8,12 @@ const config    = require('config.json')('./src/config/config.json');
 
 const mqttConfig = { qos: 1 };
 
-checkEnvVar()
-.then(() => {
-  winston.info('Environment variables found');
-  launchService()
+launchService()
   .then(() => {
     getTargetEmail();
+  }).catch((error) => {
+    throw (error);
   });
-}, (error) => {
-  throw (error);
-});
-
-function checkEnvVar() {
-  return new Promise((fullfil, reject) => {
-    winston.info('Checking environment variables');
-    if (process.env.MAILER_ADDRESS && process.env.MAILER_PWD) {
-      fullfil();
-    } else {
-      reject(new Error('Required environment is not available'));
-    }
-  });
-}
 
 function launchService() {
   return new Promise((fullfil) => {
