@@ -20,11 +20,10 @@ function send(message) {
     winston.info('getting central options..');
     return auth.getCentralOptions
     .then((centralOptions) => {
-      winston.info('obtaining token...');
-      winston.info(`obtained token: ${centralOptions.headers.Authorization}`);
+      winston.info('Received token...');
       const options = centralOptions;
       if (!validate(message)) {
-        throw Error('Invalid request');
+        reject(`Invalid request, body: ${message}`);
       }
       options.json = { message };
       options.method = 'POST';
@@ -36,10 +35,8 @@ function send(message) {
           winston.info(`Email accepted: ${JSON.stringify(body)}`);
           fulfill(body);
         } else if (response.statusCode === 401) {
-          winston.error('You are unauthorised');
           reject('You are unauthorised');
         } else {
-          winston.error(`Something else happened: ${response.statusCode}, body: ${JSON.stringify(body)}`);
           reject(`Something else happened: ${response.statusCode}, body: ${JSON.stringify(body)}`);
         }
       });
