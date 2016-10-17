@@ -30,7 +30,7 @@ function send(message) {
       winston.info(`Using detox central address: ${getMailRequestUrl()}`);
       request(getMailRequestUrl(), options, (err, response, body) => {
         if (err) {
-          throw err;
+          reject(err);
         } else if (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202) {
           resolve(body);
         } else if (response.statusCode === 401) {
