@@ -9,8 +9,6 @@ in mkService rec {
 
   dependsOn = [ mosquitto ];
   environment = {
-    MAILER_ADDRESS = "YOUR_USERNAME@gmail.com";
-    MAILER_PWD = "YOUR_PASSWORD";
     CONFIG_FILE_PATH = "${user.home}/config.json";
   };
   script = ''
