@@ -16,7 +16,7 @@ function validate(emailRequest) {
 }
 
 function send(message) {
-  return new Promise((fulfill, reject) => {
+  return new Promise((resolve, reject) => {
     winston.info('getting central options..');
     return auth.getCentralOptions
     .then((centralOptions) => {
@@ -32,8 +32,7 @@ function send(message) {
         if (err) {
           throw err;
         } else if (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202) {
-          winston.info(`Email accepted: ${JSON.stringify(body)}`);
-          fulfill(body);
+          resolve(body);
         } else if (response.statusCode === 401) {
           reject('You are unauthorised');
         } else {
