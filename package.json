@@ -19,11 +19,13 @@
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^4.3.0"
+    "eslint-plugin-react": "^4.3.0",
+    "mockery": "^2.0.0",
+    "rewire": "^2.5.2"
   },
   "scripts": {
     "start": "node --use_strict ./src/app.js",
-    "test": "node test/test.js",
+    "unitTest": "NODE_ENV=test mocha --use_strict test/unit",
     "lint": "eslint src"
   }
 }
