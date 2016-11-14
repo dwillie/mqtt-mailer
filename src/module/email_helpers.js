@@ -18,7 +18,7 @@ function validate(emailRequest) {
 function send(message) {
   return new Promise((resolve, reject) => {
     winston.info('getting central options..');
-    return auth.getCentralOptions
+    auth.getCentralOptions()
     .then((centralOptions) => {
       winston.info('Received token...');
       const options = centralOptions;
