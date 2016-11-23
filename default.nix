@@ -17,10 +17,10 @@ in rec {
     name = "mqtt-mailer-0.0.1";
     src = [ tarball ];
     buildInputs = nodePackages.nativeDeps."mqtt-mailer" or [];
-    deps = [ nodePackages.by-spec."mqtt"."1.8.0" nodePackages.by-spec."request"."^2.74.0" nodePackages.by-spec."urijs"."^1.18.1" nodePackages.by-spec."validator"."^5.5.0" nodePackages.by-spec."winston"."2.2.0" nodePackages.by-spec."detox-node-service-auth-module"."git+ssh://git@github.com/dstil/detox-node-service-auth-module.git" ];
+    deps = [ nodePackages.by-spec."mqtt"."1.8.0" nodePackages.by-spec."request"."^2.74.0" nodePackages.by-spec."urijs"."^1.18.1" nodePackages.by-spec."validator"."^5.5.0" nodePackages.by-spec."winston"."2.2.0" nodePackages.by-spec."detox-node-service-auth-module"."git+ssh://git@github.com/dstil/detox-node-service-auth-module.git" nodePackages.by-spec."winston-mqtt"."git+ssh://git@github.com/dstil/winston-mqtt.git" ];
     peerDependencies = [];
   };
   dev = build.override {
-    buildInputs = build.buildInputs ++ [ nodePackages.by-spec."eslint"."^2.8.0" nodePackages.by-spec."eslint-config-airbnb"."^7.0.0" nodePackages.by-spec."eslint-plugin-jsx-a11y"."^0.6.2" nodePackages.by-spec."eslint-plugin-react"."^4.3.0" ];
+    buildInputs = build.buildInputs ++ [ nodePackages.by-spec."eslint"."^2.8.0" nodePackages.by-spec."eslint-config-airbnb"."^7.0.0" nodePackages.by-spec."eslint-plugin-jsx-a11y"."^0.6.2" nodePackages.by-spec."eslint-plugin-react"."^4.3.0" nodePackages.by-spec."mockery"."^2.0.0" nodePackages.by-spec."rewire"."^2.5.2" ];
   };
 }

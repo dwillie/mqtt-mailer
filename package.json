@@ -13,7 +13,8 @@
     "urijs": "^1.18.1",
     "validator": "^5.5.0",
     "winston": "2.2.0",
-    "detox-node-service-auth-module": "git+ssh://git@github.com/dstil/detox-node-service-auth-module.git"
+    "detox-node-service-auth-module": "git+ssh://git@github.com/dstil/detox-node-service-auth-module.git",
+    "winston-mqtt": "git+ssh://git@github.com/dstil/winston-mqtt.git"
   },
   "devDependencies": {
     "eslint": "^2.8.0",
