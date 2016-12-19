@@ -4,7 +4,6 @@
         "react"
     ],
     "rules": {
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": true }],
       "no-multi-spaces":      0,
       "no-use-before-define": 0,
       "key-spacing":          ["error", { "align": "value" }],
