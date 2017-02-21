@@ -51,24 +51,5 @@ describe('mqtt-mailer', () => {
       const valid = validate(JSON.stringify(message));
       assert.equal(true, valid);
     });
-
-    it('should be able to create an email request', (done) => {
-      const message = { receiver: 'test@test.com', message: 'testing message', subject: 'testing subject' };
-      const sendEmail = emailHelper.__get__('send');
-      sendEmail(JSON.stringify(message)).then((response) => {
-        const request = opts.request;
-        assert.equal('email', request.url);
-        assert.equal('test-response-body', response);
-        assert.equal('test@test.com', JSON.parse(request.req.json.message).receiver);
-        assert.equal('testing message', JSON.parse(request.req.json.message).message);
-        assert.equal('testing subject', JSON.parse(request.req.json.message).subject);
-        assert.equal('POST', request.req.method);
-        assert.equal('Bearer testing-token', request.req.headers.Authorization);
-        done();
-      })
-      .catch((err) => {
-        assert.ifError(err);
-      });
-    });
   });
 });
