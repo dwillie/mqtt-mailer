@@ -6,7 +6,7 @@ const detoxMail  = require('./module/email_helpers');
 const consts     = require('./support/constants');
 const config     = require('./support/app_config').getConfig();
 
-winston.add(MqttTransport, { name: 'mqtt-mailer', topic: 'central-log', host: consts.mqttHost });
+winston.add(MqttTransport, { name: 'mqtt-mailer', host: consts.mqttHost });
 
 const client = mqtt.connect(consts.mqttHost);
 

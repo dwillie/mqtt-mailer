@@ -17,7 +17,7 @@ in rec {
     name = "mqtt-mailer-0.0.1";
     src = [ tarball ];
     buildInputs = nodePackages.nativeDeps."mqtt-mailer" or [];
-    deps = [ nodePackages.by-spec."detox-node-service-auth-module"."git+ssh://git@github.com/dstil/detox-node-service-auth-module.git" nodePackages.by-spec."mocha"."^3.2.0" nodePackages.by-spec."mqtt"."1.8.0" nodePackages.by-spec."request"."^2.74.0" nodePackages.by-spec."urijs"."^1.18.1" nodePackages.by-spec."validator"."^5.5.0" nodePackages.by-spec."winston"."2.2.0" nodePackages.by-spec."winston-mqtt"."git+ssh://git@github.com/dstil/winston-mqtt.git" ];
+    deps = [ nodePackages.by-spec."detox-node-service-auth-module"."git+ssh://git@github.com/dstil/detox-node-service-auth-module.git" nodePackages.by-spec."mocha"."^3.2.0" nodePackages.by-spec."mqtt"."1.8.0" nodePackages.by-spec."request"."^2.74.0" nodePackages.by-spec."urijs"."^1.18.1" nodePackages.by-spec."validator"."^5.5.0" nodePackages.by-spec."winston"."2.2.0" nodePackages.by-spec."winston-mqtt"."git+ssh://git@github.com/dstil/winston-mqtt.git#df8dfd7" ];
     peerDependencies = [];
   };
   dev = build.override {
